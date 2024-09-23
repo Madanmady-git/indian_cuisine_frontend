@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DishesList from './DishesList';
+import DishDetails from './DishDetails';
+import DishSuggester from './DishSuggester';
+import Header from './Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header /> {/* Render Header outside of Routes */}
+      <Routes>
+        <Route index element={<DishesList />} />
+        <Route path="/dish/:id" element={<DishDetails />} />
+        <Route path="/suggester" element={<DishSuggester />} />
+      </Routes>
+    </Router>
   );
 }
 
