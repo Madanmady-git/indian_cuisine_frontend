@@ -1,0 +1,39 @@
+.suggestor-container {
+    padding: 36px;
+
+    .suggest {
+        display: flex;
+        flex-direction: column;
+        gap:24px;
+        margin-top:20px
+    }
+
+    .suggest-card-container {
+        background-color: aliceblue;
+        padding: 12px;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+
+    .suggest-detailcard {
+        padding: 12px;
+        background-color: #FFF;
+        border-radius: 8px;
+
+        h4 {
+            margin: 0px;
+        }
+        p {
+            margin: 0px;
+            margin-top: 8px;
+        }
+    }
+
+    .dish-details {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap:24px;
+        
+    }
+}

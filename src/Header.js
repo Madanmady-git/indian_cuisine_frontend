@@ -7,6 +7,7 @@ const Header = () => {
     const navigate = useNavigate();
     const [query, setQuery] = useState("");
     const [searchDishes, setSearchDishes] = useState([]);
+    const [buttonName, setButtonName] = useState('Suggest Dish');
     const searchRef = useRef(null);
 
     const getDishes = async () => {
@@ -45,6 +46,16 @@ const Header = () => {
         };
     }, []);
 
+    const handleButtonClick = () => {
+        if (buttonName == 'Suggest Dish') {
+            setButtonName('Dishes');
+            navigate('/suggester');
+        } else {
+            setButtonName('Suggest Dish');
+            navigate('/')
+        }
+    }
+
     return (
         <header className='header'>
             <div className='search' ref={searchRef}>
@@ -75,6 +86,17 @@ const Header = () => {
                             </ul>
                         </div>
                     )}
+                </div>
+                <div >
+                    <button className='feature-button'
+                    onClick={() => {
+                        handleButtonClick()
+                    }}
+                    >
+                        {
+                            buttonName
+                        }
+                    </button>
                 </div>
             </div>
         </header>

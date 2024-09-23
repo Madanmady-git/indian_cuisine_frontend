@@ -8,7 +8,7 @@ import Header from './Header';
 function App() {
   return (
     <Router>
-      <Header /> {/* Render Header outside of Routes */}
+      <Header />
       <Routes>
         <Route index element={<DishesList />} />
         <Route path="/dish/:id" element={<DishDetails />} />
